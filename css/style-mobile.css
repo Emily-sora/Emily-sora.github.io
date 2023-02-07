@@ -1,0 +1,397 @@
+@charset 'utf-8';
+
+/* reset for mobile */
+.pc {display: none !important;}
+br.only-pc {content: '';}
+br.only-pc::after {content: ' ';}
+
+
+/* common */
+body {font-family: 'AritaDotum', 'NotoSansKR',  '나눔고딕', 'NanumGothic', 'Apple SD Gothic Neo', Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #1b2529; background-color: #fff;}
+#wrapper {min-width: 320px; max-width: 1024px; margin: 0 auto; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.7); background-color: rgba(0,0,0,0.5); color: #fff; font-size: 16px; transition: top 0.3s; z-index: 100000;}
+#skip-nav:focus {top: 0;}
+
+#header {position: relative; left: 0; top: 0; width: 100%; height: 60px; z-index: 100;}
+#header div.container-box {position: relative; width: 100%; height: 100%; background-color: #fff; margin: 0 auto; z-index: 1000; overflow: hidden;}
+#header div.container-box div.container {width: 100%; height: 100%; margin: 0 auto; padding: 0 20px; overflow: hidden;}
+#header div.container h1 {position: absolute; display: block; left: 20px; top: 50%; transform: translate(0, -50%); width: 156px;}
+#header div.container h1 a {display: block;}
+#header div.container h1 a img.color {display: block;}
+
+#header div.container ul.util {display: flex; position: absolute; right: 3.5%; top: 50%; transform: translate(0, -50%);}
+#header div.container ul.util > li + li {margin-left: 13px;}
+#header div.container ul.util a {display: block; width: 18px;}
+#header div.container ul.util a img.default {display: none;}
+#header div.container ul.util a img.color {display: block;}
+#header div.container ul.util a.search-icon {position: relative; top: -2px;}
+
+#header div.container.open ul.util a {display: none;}
+#header div.container.open span.menu-bg {display: block;}
+#header div.container span.menu-bg {position: fixed; left: 0; top: 0; display: none; width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.8);}
+
+#gnb {position: fixed; right: -1000%; top: 0; max-width: 1000px; width: 400px; height: 100%; background-color: #fff; overflow: auto; padding: 20px; box-sizing: border-box; font-size: 16px; font-family: 'NotoSansKR'; color: #333; transition: right 0.3s;}
+#gnb a.menu-close {display: none; position: absolute; right: 5%;}
+#gnb.open {right: 0;}
+#gnb.open a.menu-close {display: block;}
+
+#gnb a {display: block; transition: color 0.3s;}
+
+#gnb > ul {position: absolute; top: 30px; width: 90%; overflow: hidden;}
+#gnb > ul > li {width: 100%; overflow: hidden;}
+#gnb > ul > li.on > a {color: #0054a6;}
+#gnb > ul > li > a {position: relative; line-height: 50px; font-weight: 700; border-bottom: 1px solid #ccc; }
+#gnb > ul > li > ul {background-color: #0054a6; color: #fff; height: 0; overflow: hidden;}
+#gnb > ul > li.on > ul {height: 100%;}
+#gnb > ul > li > ul > li + li {margin-top: 3px;}
+#gnb > ul > li > ul > li > a {line-height: 40px; font-size: 15px; font-weight: 400; padding-left: 22px;}
+#gnb > ul > li > ul > li.on > a,
+#gnb > ul > li > ul > li > a:hover {background-color: rgba(255,255,255,0.05);}
+#gnb > ul > li > ul > li > ul {display: none;}
+
+
+
+#footer {width: 100%; background-color: #303642; color: #fff; font-size: 17px; font-weight: 500; overflow: hidden;}
+#top {position: relative; height: 120px; padding: 0 20px; border-bottom: 1px solid #595e68; font-size: 14px; font-weight: 600;}
+#top ul.text {position: absolute; left: 50%; top: 25px; transform: translate(-50%, 0); width: 100%; text-align: center; }
+#top ul.text li {display: inline-block;}
+#top ul.text li + li {margin-left: 10px;}
+#top ul.text li::after {display: inline-block; content: ' · '; padding-left: 12px;}
+#top ul.text li:last-child::after {display: none;}
+#top ul.text li:first-child a {color: #89b8f5;}
+#top ul.sns {position: absolute; left: 50%; bottom: 20px; transform: translate(-50%, 0); width: 100%; text-align: center;}
+#top ul.sns li {position: relative; display: inline-block; width: 32px; height: 32px; background-color: #595e68; border-radius: 50px;}
+#top ul.sns li + li {margin-left: 10px;}
+#top ul.sns li a {display: block; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+#top ul.sns li a img {display: block; width: 100%;}
+
+#bottom {position: relative; margin: 0 auto; padding: 40px 20px 90px 20px; text-align: center;}
+#bottom address {width: 100%; line-height: 1.6em; font-size: 14px; font-weight: 600;}
+#bottom address > p {display: inline-block; color: rgba(255,255,255,0.7);}
+#bottom address > p::after {display: inline-block; content: ' | '; padding-left: 8px; font-weight: 400;}
+#bottom address > p:last-of-type::after {content: '  ';}
+#bottom address > p + p {margin-left: 10px;}
+#bottom address > span {display: block; color: rgba(136, 137, 146, 0.7); padding-top: 5px;}
+
+#bottom div.family-site {position: absolute; left: 50%; bottom: 40px; transform: translate(-50%, 0); width: 100%; margin-top: 40px;}
+#bottom div.family-site > div {color: #fff; font-size: 15px;  display: inline-block;}
+#bottom div.family-site > div > a {display: block; position: relative; width: 120px; line-height: 28px; border: 2px solid transparent; background-color: #595e68; border-radius: 4px; padding: 0 40px 0 10px; transition: all 0.3s;}
+#bottom div.family-site > div > a i {position: absolute; right: 10px; top: 50%; transform: translate(0, -50%); transition: all 0.3s;}
+#bottom div.family-site > div ul {position: absolute; width: 173.5px; bottom: calc(100% - 2px); background-color: #fff; color: #1b2529; box-shadow: 7px -13px 20px 0 rgb(0 0 0 / 5%); transition: all 0.3s; display: none;}
+#bottom div.family-site > div ul > li:first-child {padding-top: 10px;}
+#bottom div.family-site > div ul > li:last-child {padding-bottom: 10px;}
+#bottom div.family-site > div ul > li > a {display: block; padding: 5px 10px; transition: color 0.3s;}
+#bottom div.family-site > div ul > li > a:hover {color: #0054a6; font-weight: 600;}
+
+#bottom div.family-site > div.open > a {display: block; background-color: #fff; color: #1b2529;}
+#bottom div.family-site > div.open > a i {transform: translate(0, -50%) rotate(180deg);}
+#bottom div.family-site > div.open ul {display: block;}
+
+/* @media (max-width: 1460px) {
+  #top ul.sns {width: calc(100% - 75%);}
+}
+@media (max-width: 1210px) {
+  #bottom address {width: calc(100% - 30%); line-height: 1.6em; padding-left: 0;}
+  #bottom address img {display: none;}
+}
+@media (max-width: 1100px) {
+  #bottom div.family-site > div > a {width: 100px;}
+} */
+
+/* main */
+#main-visual {position: relative; margin: 0 auto; height: 100vh;}
+#main-visual ul.slide {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+#main-visual ul.slide > li {position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none;}
+#main-visual ul.slide > li.on {display: block;}
+#main-visual ul.slide > li > img {min-width: 100%; min-height: 100%; object-fit: cover;}
+#main-visual > img {display: block; position: absolute; max-width: 380px; left: 50%; top: 5%; transform: translate(-50%, 0);}
+#main-visual div.blue-box {position: absolute; left: 0; bottom: 0; width: 100%; height: 150px; background-color: rgba(0, 84, 166, 0.85); }
+
+#main-visual div.blue-box ul.indicator {display: block; position: absolute; left: 20px; top: 50%; transform: translate(0, -50%); width: 120px; height: 40px; background-color: rgba(0,0,0,0.5); border-radius: 40px; color: #fff;}
+#main-visual div.blue-box ul.indicator > li {position: relative; left: 20px; top: 50%; transform: translate(0, -50%); float: left; width: 7px; height: 7px; background-color: rgba(255,255,255,0.5); border-radius: 50px; text-indent: -9999px; overflow: hidden;}
+#main-visual div.blue-box ul.indicator > li.on {background-color: #fff;}
+#main-visual div.blue-box ul.indicator > li + li {margin-left: 10px;}
+#main-visual div.blue-box ul.indicator > li a {display: block;}
+#main-visual div.blue-box p.control {position: absolute; left: 107px; top: 50%; transform: translate(0, -50%); width: 20px; height: 20px; background-color: rgba(0,0,0,0.5); border: 1px solid #fff; border-radius: 50px; text-indent: -9999px; overflow: hidden;}
+#main-visual div.blue-box p.control a.play {display: block; width: 100%; height: 100%; background: url(../image/icon/visual-pause.svg) center center no-repeat; background-size: 40% 50%;}
+#main-visual div.blue-box p.control a.play span.start {display: none;}
+#main-visual div.blue-box p.control a.play span.pause {display: block;}
+#main-visual div.blue-box p.control a.play.on {background-image: url(../image/icon/visual-play.svg);}
+#main-visual div.blue-box p.control a.play.on span.start {display: block;}
+#main-visual div.blue-box p.control a.play.on span.pause {display: none;}
+#main-visual div.blue-box > a.scroll-box {position: relative; display: block; width: 150px; height: 100%; margin: 0 auto;}
+#main-visual div.blue-box > a.scroll-box span {display: block; padding-top: 30px; text-align: center; color: #fff; font-size: 15px; font-weight: 600;}
+#main-visual div.blue-box > a.scroll-box span:hover {text-decoration: underline;}
+#main-visual div.blue-box > a.scroll-box span::before {content: ''; display: block; position: absolute; left: 50%; top: 0; transform: translate(-50%, 0); width: 90px; height: 14px; background: url(../image/icon/visual-scroll.svg) center center no-repeat; background-size: contain; animation: scroll 1.2s ease-in-out infinite both;}
+
+
+@keyframes scroll {
+  0% {top: 40%; opacity: 0;}
+  50% {top: 45%; opacity: 1;}
+  100% {top: 40%;  opacity: 0;}
+}
+
+#main-visual div.blue-box > a.scroll-box span::after {content: ''; display: block; position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 0); width: 1px; height: 40px; background-color: #fff;}
+
+#quick {position: relative; margin: 0 auto; padding: 0 20px 90px; overflow: hidden;}
+#quick h3 {font-size: 20px; font-weight: 600; line-height: 22px; text-align: center; padding-top: 50px; margin-bottom: 50px;}
+#quick ul.container {position: relative; width: 100%; padding: 20px 10px; display: flex; flex-wrap: wrap;}
+#quick ul.container li {position: relative; width: calc(33.33% - 10px); height: 100%;}
+#quick ul.container li + li {margin-left: 10px;}
+#quick ul.container li:nth-child(1) {top: 300px; transition: .5s all 0.25s cubic-bezier(.01, .96, .95, .89);}
+#quick ul.container li:nth-child(2) {top: 300px; transition: .5s all 0.5s cubic-bezier(.01, .96, .95, .89);}
+#quick ul.container li:nth-child(3) {top: 300px; transition: .5s all 0.75s cubic-bezier(.01, .96, .95, .89);}
+#quick ul.container li:nth-child(4) {top: 300px; transition: .5s all 1s cubic-bezier(.01, .96, .95, .89); margin-left: 0;}
+#quick ul.container li:nth-child(5) {top: 300px; transition: .5s all 1.25s cubic-bezier(.01, .96, .95, .89);}
+#quick ul.container li:nth-child(6) {top: 300px; transition: .5s all 1.5s cubic-bezier(.01, .96, .95, .89);}
+#quick ul.container li:nth-child(7) {top: 300px; transition: .5s all 1.75s cubic-bezier(.01, .96, .95, .89); display: none;}
+#quick ul.container li:nth-child(1).on {top: 0;}
+#quick ul.container li:nth-child(2).on {top: 0;}
+#quick ul.container li:nth-child(3).on {top: 0;}
+#quick ul.container li:nth-child(4).on {top: 0;}
+#quick ul.container li:nth-child(5).on {top: 0;}
+#quick ul.container li:nth-child(6).on {top: 0;}
+
+#quick ul.container li a::before {content: ''; display: block; width: 100%; height: 120px;  border: 1px solid #d7d7d7; border-radius: 28px; margin: 0 auto;}
+#quick ul.container li a:hover::before {border-color: #0054a6; background-color: #0054a6;}
+
+#quick ul.container li a {position: relative; display: block; cursor: pointer;}
+#quick ul.container li a::after {content: ''; display: block; width: 100%; height: 50%; position: absolute; left: 0; top: 12px; background:  url(../image/main/quick-01.svg) center center no-repeat;}
+#quick ul.container li:nth-child(2) a::after {background-image: url(../image/main/quick-02.svg);}
+#quick ul.container li:nth-child(3) a::after {background-image: url(../image/main/quick-03.svg);}
+#quick ul.container li:nth-child(4) a::after {background-image: url(../image/main/quick-04.svg);}
+#quick ul.container li:nth-child(5) a::after {background-image: url(../image/main/quick-05.svg);}
+#quick ul.container li:nth-child(6) a::after {background-image: url(../image/main/quick-06.svg);}
+#quick ul.container li a span.text {display: block; text-align: center; padding-top: 20px; padding-bottom: 30px; font-size: 18px; font-weight: 500; transition: all 0.3s;}
+#quick ul.container li a span.text::after {position: relative; bottom: 10px; content: ''; display: block; width: 70%; height: 14px; margin: 0 auto; border-radius: 40px; background-color: rgb(0, 84, 166, 0.1); opacity: 0; transition: all 0.3s;}
+
+#quick ul.container li:nth-child(1) a:hover::after {background-image: url(../image/main/quick-01-hover.svg); background-size: 40% auto;}
+#quick ul.container li:nth-child(2) a:hover::after {background-image: url(../image/main/quick-02-hover.svg);}
+#quick ul.container li:nth-child(3) a:hover::after {background-image: url(../image/main/quick-03-hover.svg);}
+#quick ul.container li:nth-child(4) a:hover::after {background-image: url(../image/main/quick-04-hover.svg);}
+#quick ul.container li:nth-child(5) a:hover::after {background-image: url(../image/main/quick-05-hover.svg);}
+#quick ul.container li:nth-child(6) a:hover::after {background-image: url(../image/main/quick-06-hover.svg);}
+
+#quick ul.container li a:hover span.text {color: #0054a6; font-weight: 600;}
+#quick ul.container li a:hover span.text::after {opacity: 1;}
+
+
+#business {width: 100%; margin: 0 auto; padding: 50px 20px 10px 20px; background-color: #fdfaf7; overflow: hidden; box-sizing: border-box;}
+#business div.wrap {position: relative;  margin: 0 auto; top: 500px; transition: .5s all 0.7s cubic-bezier(.01, .96, .95, .89); overflow: hidden;}
+#business div.wrap.on {top: 0;}
+
+#business div.wrap h3 {position: relative; font-size: 20px; line-height: 22px; font-weight: 600; text-align: center;}
+#business div.wrap div.container {position: relative; padding: 40px 20px 0 20px; height: 400px; overflow: hidden;}
+#business div.wrap div.container ul {position: relative; width: 90%; height: 100%; overflow: hidden;}
+#business div.wrap div.container ul > li {position: absolute; left: 75%; top: 40%; transform: translate(-50%, -50%); transition: .5s all 0.25s cubic-bezier(.01, .96, .95, .89); width: 200px; height: 260px; opacity: 0; z-index: 100;}
+#business div.wrap div.container ul > li.on {opacity: 1;}
+
+#business div.wrap div.container ul > li a {position: relative; display: block; width: 100%; height: 100%;}
+#business div.wrap div.container ul > li a img {display: block; width: 100%; height: 100%;}
+#business div.wrap div.container ul > li > a > div.text-box {position: absolute; top: 0; left: -67%; padding-top: 70px;}
+#business div.wrap div.container ul > li > a > div.text-box h4 {color: #000; font-size: 15px; font-weight: 600; margin-bottom: 17px;}
+#business div.wrap div.container ul > li > a > div.text-box p {display: block; font-size: 16px; font-weight: 600; padding: 15px; color: #fff; background-color: rgba(0, 84, 166, 0.8); box-shadow: 8px 13px 30px 0 rgb(0 84 166 / 45%); margin-bottom: 18px;}
+#business div.wrap div.container ul > li > a > div.text-box span {display: inline-block; font-size: 15px; font-weight: 600; border: 1px solid #000; padding: 5px;}
+#business div.wrap div.container ul > li > a > div.text-box span i {display: inline-block; position: relative; top: -1px; padding-left: 10px; font-weight: 600;}
+
+
+@media screen and (min-width: 600px) {
+  #business div.wrap div.container ul > li {width: 300px; height: 360px;}
+  #business div.wrap div.container ul > li > a > div.text-box {left: -60%;}
+  #business div.wrap div.container ul > li > a > div.text-box h4 {font-size: 17px;}
+  #business div.wrap div.container ul > li > a > div.text-box p {display: block; font-size: 18px; padding: 20px 24px;}
+  #business div.wrap div.container ul > li > a > div.text-box span {font-size: 17px; padding: 10px;}
+}
+
+@media screen and (min-width: 750px) {
+  #business div.wrap div.container ul > li {width: 340px; height: 400px; left: 70%;}
+  #business div.wrap div.container ul > li > a > div.text-box {left: -60%;}
+  #business div.wrap div.container ul > li > a > div.text-box h4 {font-size: 17px;}
+  #business div.wrap div.container ul > li > a > div.text-box p {display: block; font-size: 18px; padding: 20px 24px;}
+  #business div.wrap div.container ul > li > a > div.text-box span {font-size: 17px; padding: 10px;}
+}
+
+#business div.wrap div.indicator {position: absolute; top: 45%; transform: translate(0, -50%); width: 100%;}
+#business div.wrap div.indicator > a {display: inline-block; position: absolute; width: 40px; height: 40px; background-color: rgba(0,0,0,0.4); border-radius: 20px; font-size: 30px; transition: all 0.3s;}
+#business div.wrap div.indicator > a:hover {background-color: #0054a6;}
+#business div.wrap div.indicator > a.prev {left: 10px;}
+#business div.wrap div.indicator > a.next {right: 10px;}
+#business div.wrap div.indicator > a > i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff;}
+
+#news {max-width: 1400px; margin: 0 auto; padding: 50px 20px;}
+#news div.container {width: 100%;}
+#news div.container div.cont-top {color: #0054a6; font-weight: 600; font-size: 15px; margin-bottom: 20px;}
+#news div.container div.cont-top > a + a {margin-left: 11px;}
+#news div.container div.cont-top > a + a:hover {text-decoration: underline;}
+#news div.container div.cont-top > a:first-child {line-height: 80px; text-align: center; border-radius: 100px; padding: 12px; background-color: #0054a6; color: #fff; }
+#news div.container div.cont-top > a:nth-child(2)::after {content: '/'; display: inline-block; padding-left: 11px;}
+#news div.container div.cont-bottom {display: block;}
+#news div.container div.cont-bottom ul {width: auto; margin-bottom: 4px; padding: 6px 18px 9px; border: 1px solid #ebebee; border-radius: 10px; box-shadow: 3px 4px 10px 0 rgb(0 0 0 /7%); background-color: #fff;;}
+#news div.container div.cont-bottom ul > li { font-size: 15px; font-weight: 600; margin-top: 5px; margin-bottom: 15px; }
+#news div.container div.cont-bottom ul > li.red {color: #ea4c49;}
+#news div.container div.cont-bottom ul > li.blue {color: #1a94e6;}
+#news div.container div.cont-bottom ul > li.para {font-weight: 500;}
+#news div.container div.cont-bottom ul > li.para > a {display: -webkit-box; overflow: hidden; white-space: pre-wrap; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical; max-height: 2.4em; transition: all 0.3s;}
+#news div.container div.cont-bottom ul > li.para > a:hover {text-decoration: underline;}
+
+#career {position: relative; margin: 0 auto; margin-top: 260px; padding: 140px 0 150px 150px; background: url(../image/main/career-bg.png) no-repeat center center; background-size: contain;}
+
+#career div.text-box {position: absolute; right: 10%; top: 50px; ; width: 338px; color: #fff; text-align: left;}
+
+@media screen and (min-width: 750px) {
+  #career div.text-box {position: absolute; right: 20%;}
+}
+
+#career div.text-box h3 {font-size: 28px; line-height: 30px; font-weight: 700;}
+#career div.text-box h4 {font-size: 14px; line-height: 16px; font-weight: 500; margin-top: 6px;}
+#career div.text-box h4::after {content: ''; display: block; width: 100%; height: 1px; background-color: rgba(255,255,255,0.2); margin-top: 15px;}
+#career div.text-box ul.icon-box {margin-top: 31px; display: inline-flex;}
+#career div.text-box ul.icon-box > li {position: relative; width: 80px; height: 80px; border: 2px solid #fff; border-radius: 24px; font-size: 15px; font-weight: 600; text-align: center; vertical-align: top;}
+#career div.text-box ul.icon-box > li + li {margin-left: 13px;}
+#career div.text-box ul.icon-box > li > a {position: relative; display: inline-block; width: 100%; height: 100%; padding-top: 45px; box-sizing: border-box; transition: all 0.3s;}
+#career div.text-box ul.icon-box > li > a::before {position: absolute; left: 50%; top: 15px; transform: translate(-50%, 0); content: ''; display: inline-block; background: url(../image/icon/career-01.svg) no-repeat center center; background-size: contain;}
+#career div.text-box ul.icon-box > li:nth-child(1) > a::before {
+  width: 23px; height: 25px; background-image: url(../image/icon/career-01.svg);
+}
+#career div.text-box ul.icon-box > li:nth-child(2) > a::before {
+  width: 29px; height: 29px; background-image: url(../image/icon/career-02.svg);
+}
+#career div.text-box ul.icon-box > li:nth-child(3) > a::before {
+  width: 31px; height: 24px; background-image: url(../image/icon/career-03.svg);
+}
+#career div.text-box ul.icon-box > li:hover {background-color: #fff; color: #000;}
+#career div.text-box ul.icon-box > li:nth-child(1) > a:hover::before {
+  background-image: url(../image/icon/career-hover-01.svg);
+}
+#career div.text-box ul.icon-box > li:nth-child(2) > a:hover::before {
+  background-image: url(../image/icon/career-hover-02.svg);
+}
+#career div.text-box ul.icon-box > li:nth-child(3) > a:hover::before {
+  background-image: url(../image/icon/career-hover-03.svg);
+}
+#career div.slide {position: absolute; left: 18%; bottom: 110%;}
+#career div.slide ul.box {position: relative; width: 360px; height: 259px; border-radius: 36px; overflow: hidden;  box-shadow: 0 4px 16px rgba(0,0,0,0.5);}
+/* #career div.slide {position: absolute; left: 14%; top: 0px;} */
+/* #career div.slide ul.box {width: 420px; height: 313px;} */
+#career div.slide ul.box > li {position: absolute; left: 0; top: 0; width: 100%; height: 100%; transition: all 0.3s; display: none;}
+#career div.slide ul.box > li.on {display: block;}
+#career div.slide ul.box > li:hover {transform: scale(1.05, 1.05);}
+#career div.slide ul.box > li a {display: block;}
+#career div.slide ul.box > li a img {width: 100%; display: block;}
+
+#banner-slide {position: relative;  margin: 0 auto; margin-bottom: 50px; padding: 30px 20px;}
+#banner-slide div.box {position: relative; overflow: hidden;}
+#banner-slide div.box ul.banner {position: relative; width: 5000px; overflow: hidden;}
+#banner-slide div.box ul.banner > li {float: left;  height: 100%;}
+#banner-slide div.box ul.banner > li + li {margin-left: 15px;}
+#banner-slide div.box ul.banner > li > a {display: block; width: 100%; height: 100%; border: 1px solid #aaa; transition: all 0.3s;}
+#banner-slide div.box ul.banner > li > a:hover {border: 1px solid #000;}
+#banner-slide div.box ul.banner > li > a > img {display: block; width: 100%; height: 120px;}
+
+
+/* sub */
+#social-visual {position: relative; width: 100%; height: 45px; margin: 0 auto; background-color: #0054a6;}
+#social-visual h3 {color: #fff; font-size: 15px; line-height: 43px; font-weight: 700; padding-left: 20px;}
+
+#slogan {margin: 0 auto; padding: 70px 20px; text-align: center;}
+#slogan h3 {position: relative; font-size: 16px; font-weight: 500; margin-bottom: 17px;}
+#slogan h3::before {position: absolute; display: block; content: ''; left: 50%; bottom: 0; transform: translate(-120%, 0); width: 39px; height: 39px; background: url(../image/social/slogan.png) no-repeat center center;}
+#slogan h4 {font-size: 20px;}
+#slogan h4::after {display: block; content: ''; width: 1px; height: 18px; margin: 15px auto 12px; background-color: #b1b5c4;}
+#slogan p {font-size: 15px; line-height: 22px; color: #5f5f5f; padding: 0 60px; font-weight: 500;}
+
+#donation {position: relative; margin: 0 auto; margin-top: 50px; padding: 0 5%; text-align: center; background-color: #f8f8f8; border-radius: 30px;}
+#donation > ul {display: block; padding: 30px 5% 10px; overflow: hidden;}
+#donation > ul > li {position: relative; width: 100%; margin-bottom: 30px;}
+#donation ul li div.title {position: relative; left: 50%; transform: translate(-50% , 0); width: 90px; height: 90px; background-color: #0054a6; color: #0054a6;; border-radius: 100px; padding: 18px; margin-bottom: 10px;}
+#donation ul li:nth-of-type(2) div.title {color: #de346e; background-color: #de346e;}
+#donation ul li:nth-of-type(3) div.title {color: #117d91; background-color: #117d91;}
+#donation ul li div.title span {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: block; width: 100px; height: 100px; padding: 37px 0; box-sizing: border-box; border-radius: 60px; background-color: #fff; font-size: 18px; line-height: 24px; font-weight: 600;}
+#donation ul li ul.text {position: relative; left: 50%; transform: translate(-50%, 0); display: block; width: 80%; text-align: center;}
+#donation ul li ul.text li {padding: 25px 0 22px; margin-bottom: 5px; background-color: #fff; font-size: 16px; line-height: 18px; font-weight: 700; border-radius: 20px; box-shadow: 8px 13px 25px 0 rgba(0,0,0,0.1);}
+
+#donation ul li div.text {position: relative; left: 50%; transform: translate(-50%, 0); display: block; width: 80%; text-align: center;background-color: #fff; border-radius: 20px; padding: 30px 20px; box-sizing: border-box; box-shadow: 8px 13px 25px 0 rgba(0,0,0,0.1);}
+#donation ul li div.second p {position: relative; height: 48px; line-height: 1.4em; margin-bottom: 55px; font-size: 18px;}
+#donation ul li div.second p::after {display: block; position: absolute; left: 50%; bottom: -30px; transform: translate(-50%, 0); content: ''; width: 9px; height: 9px; background-color: #e7e9ed; border-radius: 5px;}
+#donation ul li div.second ul {font-size: 16px; line-height: 18px; font-weight: 500;}
+#donation ul li div.second ul li {width: 100%; margin-bottom: 10px; color: #de346e;}
+
+#donation ul li div.third {padding: 30px 20px;}
+#donation ul li div.third strong {position: relative; height: 55px; margin-bottom: 65px; font-size: 18px;}
+#donation ul li div.third strong::after {display: block; position: absolute; left: 50%; bottom: -30px; transform: translate(-50%, 0); content: ''; width: 9px; height: 9px; background-color: #e7e9ed; border-radius: 5px;}
+#donation ul li div.third p {margin-top: 60px; font-size: 16px; line-height: 1.4em; font-weight: 400;}
+
+
+#love > div.container {position: relative; margin: 0 auto; margin-top: 40px; padding: 30px; border-top-left-radius: 50px; border-top-right-radius: 50px; background: linear-gradient(135deg, rgba(227,238,255,1) 28%,rgba(243,231,233,1) 100%); z-index: 0;}
+#love > div.container::before {display: block; position: absolute; bottom: 0; right: 35px; content: ''; width: 135px; height: 140px; background: url(../image/social/heart.png) no-repeat right bottom; background-size: contain; z-index: -1;} 
+#love > div.container span {display: inline-block; margin-bottom: 25px; padding: 20px 30px 18px; background-color: #03a0dc; color: #fff; font-size: 18px; line-height: 24px; font-weight: 600; border-radius: 50px; box-shadow: 8px 13px 25px 0 rgba(154, 191, 241, 0.2);}
+#love > div.container p {font-size: 16px; line-height: 20px; font-weight: 500; margin-bottom: 10px;}
+#love > div.container p i {font-weight: 700; margin-bottom: 5px;} 
+
+
+#sub-head {position: relative; margin: 50px auto; padding: 25px 20px; border: 1px solid #ccc;}
+#sub-head ul {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; }
+#sub-head ul li {display: inline-block; font-weight: 500; font-size: 14px;}
+#sub-head ul li + li {margin-left: 30px;}
+#sub-head ul li a {display: block;}
+#sub-head ul li.on a {position: relative; font-weight: 700; color: #0054a6;}
+#sub-head ul li.on a::after {position: absolute; bottom: -15px; display: block; content: ''; width: 100%; height: 3px; background-color: #0054a6; }
+
+#policy { margin: 0 auto; padding: 0 20px;}
+#policy div.box {position: relative; margin-right: 0; padding: 6px; line-height: 22px; background: linear-gradient(135deg, #e3eeff 0%,#f3e7e9 100%); }
+#policy div.box div.inner {padding: 50px 40px; background-color: #fff; font-weight: 400;}
+#policy div.box div.inner h3 {font-size: 20px; text-align: center; line-height: 50px; color: #000;}
+#policy div.box div.inner h3 span {display: block; font-weight: 700; font-size: 28px; color: #0054a6;}
+#policy div.box div.inner div.image-box {display: block; position: relative; right: auto; top: auto; z-index: 2; margin: 20px 0; text-align: center;}
+#policy div.box div.inner ul li {position: relative; padding-top: 40px; padding-bottom: 15px; background-position: left bottom; background-repeat: repeat-x; background-image: url(../image/safe/deco.png);}
+#policy div.box div.inner ul li::before {content: ''; display: inline-block; position: absolute; left: 0; top: 15px; width: 40px; height: 28px; background: url(../image/safe/important.png) no-repeat; background-size: contain;}
+#policy div.box div.inner ul li p.for {padding-top: 8px; font-weight: 700; font-size: 16px; line-height: 22px; color: #000;}
+#policy div.box div.inner ul li p.do {padding-top: 10px; padding-bottom: 18px; font-weight: 600; font-size: 14px;}
+#policy div.box div.inner ul li span.do-more {display: inline-block; margin-top: 15px;}
+
+#policy div.box div.inner div.sign {position: relative; min-height: auto; margin: 30px 0; font-size: 16px;}
+#policy div.box div.inner div.sign span:first-of-type {display: block; line-height: 18px; font-weight: 500;}
+#policy div.box div.inner div.sign span:last-of-type {margin-top: 5px; font-weight: 600; line-height: 20px;}
+#policy div.box div.inner div.sign img {display: block; position: absolute; top: auto; width: 180px; margin-top: 20px;}
+
+#feedback {margin: 50px auto; padding: 20px 25px; border: 1px solid #ccc;}
+#feedback p {font-size: 15px; font-weight: 600; line-height: 24px;}
+#feedback div.top {margin-bottom: 5px;}
+#feedback div.top div.radio-box {margin-bottom: 10px;}
+#feedback div.top div.radio-box label {font-size: 14px; line-height: 2rem; padding: 0.2em 0.2em;}
+#feedback div.top div.radio-box label span {vertical-align: middle; font-weight: 500;}
+#feedback div.top div.radio-box label [type='radio'] {vertical-align: middle; appearance: none; border: max(2px, 0.1em) solid gray; border-radius: 50%; width: 1.2em; height: 1.2em; transition: border 0.3s ease-in-out;}
+#feedback div.top div.radio-box label [type='radio']:checked {border: 0.4em solid #0054a6;} 
+#feedback div.top div.radio-box label [type='radio']:focus-visible {outline-offset: max(2px, 0.1em); outline: max(2px, 0.1em) dotted #0054a6;}
+#feedback div.top div.radio-box label [type='radio']:hover {box-shadow: 0 0 0 max(4px, 0.2em) #ccc; cursor: pointer;}
+#feedback div.top div.radio-box label [type='radio']:disabled {background-color: #aaa; box-shadow: none; opacity: 0.7; cursor: not-allowed;}
+#feedback div.top div.radio-box label [type='radio']:disabled + span {opacity: 0.7; cursor: not-allowed;}
+
+
+#feedback div.top div.text-box input {width: 70%; height: 35px; border: 1px solid #8c8c8c; border-radius: 3px; font-family: inherit; font-size: 14px; font-weight: 300; color: #000; padding: 4px 20px 4px 10px; box-sizing: border-box; appearance: none;}
+#feedback div.top div.text-box input::placeholder {color: #8c8c8c; font-weight: 500;}
+#feedback div.top div.text-box span {width: 107px; padding: 8px 12px; border: 1px solid #000; border-radius: 3px; background-color: #fff; font-size: 14px; font-weight: 500; line-height: 14px; color: #1b2529; box-sizing: border-box; transition: 0.3s all ease-in-out;}
+#feedback div.top div.text-box span:hover {background-color: #0054a6; color: #fff;}
+
+
+
+
+
+
+/* module */
+.custom-scroll {overflow: auto; scrollbar-width: thin; scrollbar-color: #e0e0e0; -ms-overflow-style: none;}
+.custom-scroll::-webkit-scrollbar {width: 3px;}
+.custom-scroll::-webkit-scrollbar-thumb {background-color: transparent; border-radius: 10px; background-color: rgba(0, 0, 0, 0.5);}
+.custom-scroll:hover::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0.1);}
+.custom-scroll::-webkit-scrollbar-track {background-color: rgba(0, 0, 0, 0.05);}
+
+/* controller module */
+ul.control {position: absolute; left: 50%; bottom: -15%; transform: translate(-50%, 0);}
+ul.control > li {position: relative; display: inline-block; width: 31px; height: 31px; border: 1px solid #aaa; background-color: #fff; border-radius: 36px;}
+ul.control > li + li {margin-left: 5px;}
+ul.control > li > a {width: 100%; height: 100%;}
+ul.control > li > a > i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+ul.control > li > a.play i {display: none;}
+ul.control > li > a.play i:first-child {display: block;}
+ul.control > li > a.play.on i:first-child {display: none;}
+ul.control > li > a.play.on i + i {display: block;}

@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/* reset for pc */
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m::after {content: ' ';}
+
+
+
+/* common */
+body {font-family: 'NotoSans', '나눔고딕', 'NanumGothic', 'Apple SD Gothic Neo', Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #1b2529; background-color: #fff;}
+.wrapper {min-width: 1024px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.7); background-color: rgba(0,0,0,0.5); color: #fff; font-size: 16px; transition: top 0.3s; z-index: 100000;}
+#skip-nav:focus {top: 0;}
+
+#header {position: relative; height: 100%; overflow: hidden;}
+#header img.cloud {width: 100%; height: 100vh;}
+#header h1 {position: absolute; left: 40px; top: 20px; width: 60px; height: 70px;}
+#header div.container {position: absolute; top: 40%; width: 100%; text-align: center;}
+#header div.container h2 {font-size: 46px; font-weight: 600; margin-bottom: 20px;}
+#header div.container p.intro {font-size: 18px; font-weight: 500;}
+#header span.scroll {position: absolute; left: 50%; bottom: 50px; transform: translate(-50%, 0); animation: scroll 1.2s ease-in-out infinite both;}
+
+@keyframes scroll {
+  0% {bottom: 60px; opacity: 0;}
+  50% {bottom: 70px; opacity: 1;}
+  100% {bottom: 60px;  opacity: 0;}
+}
+
+/* .reveal{
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.on{
+  opacity: 1;
+} */
+
+section.about {max-width: 1200px; margin: 100px auto; padding: 0 20px; display: flex; flex-wrap: nowrap;}
+div.left-cont {text-align: left; flex: 70%; padding-top: 80px;}
+div.left-cont h2 {font-weight: 500; font-size: 32px; margin-bottom: 30px;}
+div.left-cont p {font-weight: 500; font-size: 18px; line-height: 1.6;}
+div.left-cont h2 strong {font-weight: 500; color: rgb(67, 97, 157);}
+div.right-cont {position: relative; width: 300px; height: 400px; flex: 20%;}
+div.right-cont::after {position: absolute; right: 4%; bottom: -4%; content: ''; display: block; width: 300px; height: 400px; border: 2px solid cornflowerblue;}
+div.right-cont img {width: 100%; height: 100%;}
+
+section.spec {width: 100%; background-color: #fafafa;}
+section.spec div.container {max-width: 1200px; margin: 100px auto; padding: 0 20px;}
+div.edu {padding: 130px 40px 0 40px; display: flex; justify-content: center;}
+div.edu p.left-cont {font-size: 46px; margin-right: 140px; color: #333; text-align: right; font-weight: 400; line-height: 1.6;}
+div.edu ul.right-cont {margin-top: 10px;}
+ul.right-cont li.list-item {position: relative; font-size: 19px; line-height: 160%; padding-left: 30px; margin-top: 56px;}
+ul.right-cont li.list-item:first-of-type {margin-top: 0;}
+li.list-item strong.list-name {display: block; margin-bottom: 8px; font-weight: 700;}
+li.list-item strong.list-name::before {content: ''; position: absolute; top: 6px; left: 0; display: block; width: 16px; height: 13px; background: url(../image/checked.svg) 100% 0% no-repeat; background-size: 100%;}
+li.list-item p {line-height: 1.68; font-size: 98%; letter-spacing: -.19px;}
+
+div.skill {padding: 160px 40px 60px 40px; display: flex;}
+div.skill p.left-cont {font-size: 46px; margin-right: 140px; color: #333; text-align: right; font-weight: 400; line-height: 1.6;}
+div.skill ul.right-cont {margin-top: 10px;}
+div.skill ul.right-cont li.list-item {position: relative; font-size: 19px; line-height: 160%; padding-left: 50px; margin-top: 30px;}
+div.skill ul.right-cont li.list-item:first-of-type {margin-top: 0;}
+div.skill li.list-item strong.list-name {display: block; margin-bottom: 8px; font-weight: 700;}
+div.skill li.list-item strong.list-name::before {content: ''; position: absolute; top: 6px; left: 20px; display: block; width: 16px; height: 13px; background: url(../image/checked.svg) 100% 0% no-repeat; background-size: 100%;}
+div.skill li.list-item p {line-height: 1.68; font-size: 98%; letter-spacing: -.19px;}
+
+section.works {max-width: 1200px; margin: 100px auto; padding: 60px 20px;}
+section.works h2 {text-align: center; margin-bottom: 20px;}
+section.works h2 span.top {display: block; font-size: 24px; opacity: 0.5; font-weight: 400;}
+section.works h2 span.bottom {position: relative; display: block; font-size: 64px; padding-bottom: 20px; font-weight: 500;}
+section.works h2 span.bottom::after {position: absolute; content: ''; width: 80px; height: 2px; left: 50%; bottom: 0; transform: translate(-50%, 0); border-radius: 30px; background-color: cornflowerblue;}
+section.osulloc {display: flex; justify-content: center;}
+section.korail {display: flex; justify-content: center; padding-top: 60px;}
+section.admin {display: flex; justify-content: center; padding-top: 60px;}
+div.left {width: 60%;}
+div.left img {width: 100%;}
+div.right {width: 40%; padding-top: 70px;  background-color: pink;}
+div.right h3.title {position: relative; padding-left: 80px; font-size: 26px; font-weight: 500; line-height: 1.6;}
+div.right h3.title::before {position: absolute; left: 0; top: -100%; width: 130px; display: inline-block; font-size: 64px; font-weight: 500; color: cornflowerblue; content: '01';}
+section.korail div.right h3.title::before {position: absolute; left: 0; top: -100%; width: 130px; display: inline-block; font-size: 64px; font-weight: 500; color: cornflowerblue; content: '02';}
+section.admin div.right h3.title::before {position: absolute; left: 0; top: -100%; width: 130px; display: inline-block; font-size: 64px; font-weight: 500; color: cornflowerblue; content: '03';}
+div.right ul.feature {font-size: 15px; margin: 30px 0 50px;}
+div.right ul.feature strong {display: inline-block; width: 35%; line-height: 30px; color: #222;}
+div.right ul.feature strong span {font-weight: 300;}
+div.right ul.feature li a {font-weight: 600; border-bottom: 1px solid #e0e0e0;}
+div.right p {font-size: 20px; line-height: 1.6;}
