@@ -70,12 +70,12 @@ section.works h2 {text-align: center; margin-bottom: 20px;}
 section.works h2 span.top {display: block; font-size: 24px; opacity: 0.5; font-weight: 400;}
 section.works h2 span.bottom {position: relative; display: block; font-size: 64px; padding-bottom: 20px; font-weight: 500;}
 section.works h2 span.bottom::after {position: absolute; content: ''; width: 80px; height: 2px; left: 50%; bottom: 0; transform: translate(-50%, 0); border-radius: 30px; background-color: cornflowerblue;}
-section.osulloc {display: flex; justify-content: center;}
-section.korail {display: flex; justify-content: center; padding-top: 60px;}
-section.admin {display: flex; justify-content: center; padding-top: 60px;}
+section.osulloc {display: flex; justify-content: center; padding-top: 60px;}
+section.korail {display: flex; justify-content: center; padding-top: 120px;}
+section.admin {display: flex; justify-content: center; padding-top: 120px;}
 div.left {width: 60%;}
 div.left img {width: 100%;}
-div.right {width: 40%; padding-top: 70px;  background-color: pink;}
+div.right {width: 40%; padding-top: 70px;}
 div.right h3.title {position: relative; padding-left: 80px; font-size: 26px; font-weight: 500; line-height: 1.6;}
 div.right h3.title::before {position: absolute; left: 0; top: -100%; width: 130px; display: inline-block; font-size: 64px; font-weight: 500; color: cornflowerblue; content: '01';}
 section.korail div.right h3.title::before {position: absolute; left: 0; top: -100%; width: 130px; display: inline-block; font-size: 64px; font-weight: 500; color: cornflowerblue; content: '02';}
@@ -84,4 +84,20 @@ div.right ul.feature {font-size: 15px; margin: 30px 0 50px;}
 div.right ul.feature strong {display: inline-block; width: 35%; line-height: 30px; color: #222;}
 div.right ul.feature strong span {font-weight: 300;}
 div.right ul.feature li a {font-weight: 600; border-bottom: 1px solid #e0e0e0;}
-div.right p {font-size: 20px; line-height: 1.6;}
+div.right p {font-size: 20px; font-weight: 500; line-height: 1.6;}
+div.right p::before {content: "\f00c"; font-size: 14px; margin-right: 10px; color: cornflowerblue; font-family: 'Font Awesome 6 Free'; font-weight: 700;}
+div.right p em {font-weight: 500; color: cornflowerblue;}
+
+div.btn-con {margin-top: 35px;}
+div.btn-con a {float: left; width: 42%; height: 40px; line-height: 40px; border: 2px solid rgb(70, 129, 238); text-align: center; font-size: 15px; font-weight: 500; color: rgb(70, 129, 238); transition: all 0.2s; border-radius: 5px; box-shadow: 0 2px 10px rgba(0 0 0 /16%);}
+div.btn-con a:last-of-type {margin-left: 12px;}
+div.btn-con a:hover {background-color: rgb(70, 129, 238); color: #fff;}
+
+section.contact {background-color: #fafafa;}
+div.contact-inner {max-width: 1200px; margin: 0 auto; padding: 120px 20px 220px; text-align: center;}
+div.contact-inner h2 {display: block; margin-bottom: 70px; font-size: 24px; letter-spacing: -.015rem; font-weight: 500;}
+div.contact-inner div.info {display: inline-block; position: relative;}
+div.contact-inner div.info a {display: block; text-align: center; font-size: 82px; font-weight: 500; transition: all 0.3s;}
+div.contact-inner div.info a:hover {font-size: 60px; color: rgb(255, 187, 60);}
+div.contact-inner div.info p {margin-top: 26px; font-size: 16px; line-height: 170%; font-weight: 400; color: #747474;}
+div.contact-inner div.info img {width: 28px; margin-left: 6px;}
