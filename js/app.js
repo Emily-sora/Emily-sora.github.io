@@ -3,6 +3,8 @@
 $(document).ready(function() {
   new WOW().init();
   $('#fullpage').fullpage();
+
+  
   
 });
 
